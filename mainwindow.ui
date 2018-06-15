@@ -27,7 +27,7 @@
      <string>用户查询</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="ClientaddpushButton">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -37,7 +37,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>添加用户</string>
     </property>
    </widget>
    <widget class="QPushButton" name="LoanquerypushButton">
@@ -53,7 +53,7 @@
      <string>贷款查询</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="NewLoanPushButton">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -63,7 +63,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>新建贷款</string>
     </property>
    </widget>
    <widget class="QPushButton" name="AccountquerypushButton">
@@ -89,7 +89,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>新建账户</string>
     </property>
    </widget>
    <widget class="QPushButton" name="ClerkquerypushButton">
@@ -115,14 +115,14 @@
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>新建员工</string>
     </property>
    </widget>
    <widget class="QComboBox" name="SelectcitycomboBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>80</x>
+      <y>20</y>
       <width>69</width>
       <height>22</height>
      </rect>
@@ -146,11 +146,63 @@
    <widget class="QTableView" name="show_tableView">
     <property name="geometry">
      <rect>
-      <x>205</x>
+      <x>315</x>
       <y>0</y>
-      <width>411</width>
+      <width>301</width>
       <height>421</height>
      </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="ClientSubmitpushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>370</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>提交修改</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="DeletepushButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>210</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>删除用户</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="citylabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>54</width>
+      <height>12</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>选择城市：</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="StasticpushButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>370</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>生成统计</string>
     </property>
    </widget>
   </widget>

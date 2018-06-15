@@ -8,7 +8,6 @@
 #include <QtSql>
 #include <QSqlTableModel>
 #include <QSqlRelationalTableModel>
-//#include <QTableView>
 #include <QSqlError>
 #include <QString>
 #include <QLabel>
@@ -18,6 +17,7 @@
 #include <QWidget>
 #include <QTextEdit>
 #include <QMessageBox>
+#include <QPainter>
 
 namespace Ui {
 class MainWindow;
@@ -32,6 +32,7 @@ public:
     ~MainWindow();
 
 private slots:
+
     void on_ClientQuerypushButton_clicked();
 
     void on_LoanquerypushButton_clicked();
@@ -40,6 +41,14 @@ private slots:
 
     void on_ClerkquerypushButton_clicked();
 
+    void on_ClientaddpushButton_clicked();
+
+    void on_ClientSubmitpushButton_clicked();
+
+    void on_DeletepushButton_clicked();
+
+    void on_StasticpushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
 
@@ -47,6 +56,9 @@ private:
     QSqlDatabase db;
     QSqlQuery query;
     QSqlTableModel *model;
+    QWidget* paint_window;
+    QPainter paint;
+    void paintEvent(QPaintEvent* event);
 };
 
 #endif // MAINWINDOW_H
