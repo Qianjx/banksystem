@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>631</width>
+    <width>839</width>
     <height>487</height>
    </rect>
   </property>
@@ -79,7 +79,7 @@
      <string>账户查询</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="NewAccontpushButton">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -105,7 +105,7 @@
      <string>员工查询</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="NewClerkpushButton">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -129,26 +129,26 @@
     </property>
     <item>
      <property name="text">
-      <string>合肥</string>
+      <string>Hefei</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>北京</string>
+      <string>Beijing</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>上海</string>
+      <string>Shanghai</string>
      </property>
     </item>
    </widget>
    <widget class="QTableView" name="show_tableView">
     <property name="geometry">
      <rect>
-      <x>315</x>
-      <y>0</y>
-      <width>301</width>
+      <x>310</x>
+      <y>10</y>
+      <width>451</width>
       <height>421</height>
      </rect>
     </property>
@@ -205,13 +205,52 @@
      <string>生成统计</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="delete1pushButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>250</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>删除贷款</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete2pushButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>290</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>删除账户</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="delete3pushButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>330</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>删除员工</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>631</width>
+     <width>839</width>
      <height>23</height>
     </rect>
    </property>

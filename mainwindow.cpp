@@ -11,11 +11,6 @@ MainWindow::MainWindow(QWidget *parent) :
     model=new QSqlTableModel(this);
 
 
-
-    paint_window=new QWidget();
-    paint_window->resize(400,300);
-    paint_window->show();
-    paint.begin(this->paint_window);
     ui->show_tableView->setModel(model);
 }
 
@@ -30,7 +25,7 @@ bool MainWindow::createConnection()
 
     db=QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
-    db.setDatabaseName("mybms");
+    db.setDatabaseName("bank_system");
     db.setUserName("root");
     db.setPassword("740832Qjx");
     db.setPort(3306);
@@ -46,31 +41,34 @@ bool MainWindow::createConnection()
 
 void MainWindow::on_ClientQuerypushButton_clicked()
 {
-    model->setTable("book");
+    model->setTable("client");
     model->select();
 }
 
 void MainWindow::on_LoanquerypushButton_clicked()
 {
-    model->setTable("book");
+    model->setTable("loan");
+    model->setFilter(QString("bankname='%1'").arg(currentcity));
     model->select();
 }
 
 void MainWindow::on_AccountquerypushButton_clicked()
 {
-    model->setTable("book");
+    model->setTable("storeaccont");
+    model->setFilter(QString("bankname='%1'").arg(currentcity));
     model->select();
 }
 
 void MainWindow::on_ClerkquerypushButton_clicked()
 {
-    model->setTable("book");
+    model->setTable("staff");
+    model->setFilter(QString("bankname='%1'").arg(currentcity));
     model->select();
 }
 
 void MainWindow::on_ClientaddpushButton_clicked()
 {
-    model->setTable("book");
+    model->setTable("client");
     model->select();
     int row_num=model->rowCount();
     QString book_id;
@@ -78,6 +76,41 @@ void MainWindow::on_ClientaddpushButton_clicked()
     model->setData(model->index(row_num,0),book_id);
     model->submitAll();
 }
+
+void MainWindow::on_NewLoanPushButton_clicked()
+{
+    model->setTable("loan");
+    model->select();
+    int row_num=model->rowCount();
+    QString book_id;
+    model->insertRow(row_num);
+    model->setData(model->index(row_num,0),book_id);
+    model->submitAll();
+}
+
+void MainWindow::on_NewAccontpushButton_clicked()
+{
+    model->setTable("storeaccount");
+    model->select();
+    int row_num=model->rowCount();
+    QString book_id;
+    model->insertRow(row_num);
+    model->setData(model->index(row_num,0),book_id);
+    model->submitAll();
+}
+
+void MainWindow::on_NewClerkpushButton_clicked()
+{
+    model->setTable("clerk");
+    model->select();
+    int row_num=model->rowCount();
+    QString book_id;
+    model->insertRow(row_num);
+    model->setData(model->index(row_num,0),book_id);
+    model->submitAll();
+}
+
+
 
 void MainWindow::on_ClientSubmitpushButton_clicked()
 {
@@ -111,18 +144,59 @@ void MainWindow::on_DeletepushButton_clicked()
         return;
 }
 
-void MainWindow::paintEvent(QPaintEvent *event){
-
-    //bool t=paint.begin(this);
-    paint.setPen(QPen(Qt::blue,4,Qt::DashLine));//设置画笔形式
-    paint.setBrush(QBrush(Qt::red,Qt::SolidPattern));//设置画刷形式
-    paint.drawRect(20,20,160,160);
-    paint.end();
-}
-
 void MainWindow::on_StasticpushButton_clicked()
 {
 
     paint_window->show();
 
 }
+
+void MainWindow::on_delete1pushButton_clicked()
+{
+    int cur_row=ui->show_tableView->currentIndex().row();
+    int ok=QMessageBox::warning(this,tr("删除这个表项"),tr("您确定删除当前行吗？"),
+                                QMessageBox::Yes,QMessageBox::No);
+    if(ok==QMessageBox::Yes){
+        model->removeRow(cur_row);
+        model->submitAll();
+    }
+    else
+        return;
+}
+
+void MainWindow::on_delete2pushButton_clicked()
+{
+    int cur_row=ui->show_tableView->currentIndex().row();
+    int ok=QMessageBox::warning(this,tr("删除这个表项"),tr("您确定删除当前行吗？"),
+                                QMessageBox::Yes,QMessageBox::No);
+    if(ok==QMessageBox::Yes){
+        model->removeRow(cur_row);
+        model->submitAll();
+    }
+    else
+        return;
+}
+
+void MainWindow::on_delete3pushButton_clicked()
+{
+    int cur_row=ui->show_tableView->currentIndex().row();
+    int ok=QMessageBox::warning(this,tr("删除这个表项"),tr("您确定删除当前行吗？"),
+                                QMessageBox::Yes,QMessageBox::No);
+    if(ok==QMessageBox::Yes){
+        model->removeRow(cur_row);
+        model->submitAll();
+    }
+    else
+        return;
+}
+
+void MainWindow::on_SelectcitycomboBox_currentIndexChanged(int index)
+{
+    currentline=index;
+}
+
+void MainWindow::on_SelectcitycomboBox_currentIndexChanged(const QString &arg1)
+{
+    currentcity=arg1;
+}
+
