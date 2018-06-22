@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-
+#include <QTableWidget>
 #include <QSqlDatabase>
 #include <QSqlQuery>
 #include <QtSql>
@@ -61,10 +61,6 @@ private slots:
 
     void on_NewLoanPushButton_clicked();
 
-    void on_pushButton_6_clicked();
-
-    void on_pushButton_8_clicked();
-
     void on_NewAccontpushButton_clicked();
 
     void on_NewClerkpushButton_clicked();
@@ -74,10 +70,9 @@ private:
 
     bool createConnection();//建立数据库连接
     QSqlDatabase db;
-    QSqlQuery query;
-    QSqlTableModel *model;
-    QWidget* paint_window;
 
+    QSqlTableModel *model;
+    QTableWidget* static_window;
     QString currentcity;
     int currentline;
 
