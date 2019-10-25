@@ -24,7 +24,7 @@ bool MainWindow::createConnection()
     db.setHostName("localhost");
     db.setDatabaseName("bank_system");
     db.setUserName("root");
-    db.setPassword("740832Qjx");
+    db.setPassword("******");
     db.setPort(3306);
 
     if(!db.open())
